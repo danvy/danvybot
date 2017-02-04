@@ -26,7 +26,7 @@ namespace DanvyBotWebApp
                 int length = (activity.Text ?? string.Empty).Length;
 
                 // return our reply to the user
-                Activity reply = activity.CreateReply($"You sent '{activity.Text}' which was {length} characters at {activity.Timestamp}.");
+                Activity reply = activity.CreateReply($"You sent '{activity.Text}' which was {length} characters at {activity.Timestamp}..");
                 await connector.Conversations.ReplyToActivityAsync(reply);
             }
             else
