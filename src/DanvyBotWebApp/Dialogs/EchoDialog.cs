@@ -19,7 +19,7 @@ namespace DanvyBotWebApp.Dialogs
         public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
         {
             var message = await argument;
-            await context.PostAsync("You said: '" + message.Text + "'");
+            await context.PostAsync(string.Format("{0} said '{1}' to {2}", message.From.Id, message.Text, message.Recipient.Id));
             context.Wait(MessageReceivedAsync);
         }
     }
